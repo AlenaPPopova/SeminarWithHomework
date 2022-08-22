@@ -77,18 +77,24 @@
 
 
 
-//Задача 8. Напишите программу, которая на вход принимает число (N),а на выходе показывает  все четные числа от 1 до N/
+// //Задача 8. Напишите программу, которая на вход принимает число (N),а на выходе показывает  все четные числа от 1 до N/
 
-int num;
+// int num;
+// int even = 1;
 
-Console.Write("Введите число: ");
+// //Ввод данных
 
-num = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число: ");
 
-num even = 1;
+// //Запрос данных у пользователя
 
-while(even<=num){
-    if (even % 2 == 0)
-    Console.Write(even + "");
-    even++;
-}
+// num = Convert.ToInt32(Console.ReadLine());
+
+// while(even<=num){
+//     if (even % 2 == 0){
+//     Console.Write(even + "");
+//     }
+//     even++;
+// }
+// //Вычисление и ответ
+
