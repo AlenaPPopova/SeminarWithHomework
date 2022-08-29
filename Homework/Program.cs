@@ -123,48 +123,29 @@
 
 // // // //Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
 // // что третьей цифры нет.
-// Не решена. В процессе.
+// !!!!!!!Не решена. В процессе.
    
-// int Number(){  
-//     int num = number;
-//     Console.WriteLine("Number is - ");
-//     if (num>=100){
+//  int Number (int num){
+//     while (num > 999){
 //         int dec = num / 10;
-//         int ed = num % 10;
-//         int result = dec*10 + ed;
+//         int ed = dec % 10;
+//         int result = ed;
 //         return result;
-//         }
-//         else
-//         {
-//             Console.WriteLine("Третьей цифры нет");
-//         }
-    
+//     }
+//     if (num>99){
+//         int Number(num);
+//         Console.WriteLine("The third number is - " + Number(num));
+//     }
+//     else{
+//         Console.WriteLine("There is NOT the third number");
+//     }
 // }
 
-// Console.WriteLine("Enter number -");
-// int Number(num);
+// Console.WriteLine("Enter number: );
+// int num = Convert.ToInt32(Console.ReadLine());
 
 
 
-
-
-// // int Number(){
-// //     int num = new Random().Next(10,1000);
-// //     Console.WriteLine("Number is - " + num);
-// //     if(num>=100){
-// //         int dec = num / 10;
-// //         int ed = dec % 100;
-// //         int result = ed;
-// //         }
-
-// //     else {
-// //         Console.WriteLine("Two-digit number.");
-// //     }
-// //     return num;
-// // }
-
-// // int number = Number();
-// // Console.WriteLine("Number is - " + number);
 
 
 
