@@ -3,3 +3,13 @@ C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\семинар
 C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\семинар4.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\семинар4.AssemblyInfo.cs
 C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\семинар4.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Вот\семинар4\bin\MCD\Debug\net6.0\семинар4.exe
+C:\Users\User\Desktop\Вот\семинар4\bin\MCD\Debug\net6.0\семинар4.deps.json
+C:\Users\User\Desktop\Вот\семинар4\bin\MCD\Debug\net6.0\семинар4.runtimeconfig.json
+C:\Users\User\Desktop\Вот\семинар4\bin\MCD\Debug\net6.0\семинар4.dll
+C:\Users\User\Desktop\Вот\семинар4\bin\MCD\Debug\net6.0\семинар4.pdb
+C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\семинар4.dll
+C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\refint\семинар4.dll
+C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\семинар4.pdb
+C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\семинар4.genruntimeconfig.cache
+C:\Users\User\Desktop\Вот\семинар4\obj\MCD\Debug\net6.0\ref\семинар4.dll
