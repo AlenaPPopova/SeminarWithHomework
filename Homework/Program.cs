@@ -125,28 +125,30 @@
 // // что третьей цифры нет.
 // !!!!!!!Не решена. В процессе.
    
-//  int Number (int num){
-//     while (num > 999){
-//         int dec = num / 10;
-//         int ed = dec % 10;
-//         int result = ed;
-//         return result;
-//     }
-//     if (num>99){
-//         int Number(num);
-//         Console.WriteLine("The third number is - " + Number(num));
-//     }
-//     else{
-//         Console.WriteLine("There is NOT the third number");
-//     }
-// }
-
-// Console.WriteLine("Enter number: );
-// int num = Convert.ToInt32(Console.ReadLine());
+ 
 
 
 
 
+
+
+int Number (int num){
+    while (num > 999){
+        int dec = num / 10;
+    }
+        int result = num % 10;
+        return result;
+    }
+ 
+    Console.WriteLine("Enter number: );
+    int num = Convert.ToInt32(Console.ReadLine());
+    if (num > 99){
+    Number (num);
+    Console.WriteLine("The third number is - " + Number(num));
+    }
+    else{
+        Console.WriteLine("There is NOT the third number");
+    }
 
 
 
