@@ -123,34 +123,23 @@
 
 // // // //Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
 // // что третьей цифры нет.
-// !!!!!!!Не решена. В процессе.
-   
- 
 
-
-
-
-
-
-int Number (int num){
-    while (num > 999){
-        int dec = num / 10;
-    }
-        int result = num % 10;
-        return result;
-    }
- 
-    Console.WriteLine("Enter number: );
-    int num = Convert.ToInt32(Console.ReadLine());
-    if (num > 99){
-    Number (num);
-    Console.WriteLine("The third number is - " + Number(num));
-    }
-    else{
-        Console.WriteLine("There is NOT the third number");
-    }
-
-
+// void Third(int a){
+//     while(a >= 1000){
+//         int ed = a / 10;
+//         a = ed;
+//     }
+//     if(a<1000){
+//         int num = a % 10;
+//         Console.WriteLine("Третья цифра - " + num);
+//     }
+//     if(a < 100){
+//         Console.WriteLine("Третьей цифры нет");
+//     }
+// }
+// Console.WriteLine("Введите число: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Third(a);
 
 
 
@@ -177,21 +166,121 @@ int Number (int num){
 
 
 
-
-
-
-
                     // ***** Дз по семинару3*****
 
-// // Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
-// 14212 -> нет
-// 12821 -> да
-// 23432 -> да
+//Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+
+// void Pal(){
+//     int num=new Random().Next(10000, 100000);
+//     Console.WriteLine("Введите число: " + num);
+//     int st1=0;
+//     int st2=0;
+//     int st3=0;
+//     int ed1=0;
+//     int ed2=0;
+//     int ed3=0;
+//     st1=num % 10;
+//     st2=num % 100;
+//     st3=st2 / 10;
+//     ed1=num / 10000;
+//     ed2=num / 1000;
+//     ed3=ed2 % 10;
+//     if(st1 == ed1 && st3 == ed3){
+//          Console.WriteLine("Число является палиндромом");
+//     }
+//     else{
+//         Console.WriteLine( "Число НЕ является палиндром");
+//     }  
+// }    
+//  Pal();
+
+
 
 // Задача 21. Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-// A (3,6,8); B (2,1,-7), -> 15.84
-// A (7,-5, 0); B (1,-1,9) -> 11.53
+
+
+// double Coor(double x1, double y1, double z1, double x2, double y2, double z2){
+//     double distance = 0;
+//     distance= Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) + (z2 - z1) * (z2 - z1));
+//     Console.WriteLine("Расстояние в 3 D: " + distance);
+//     return distance;
+// }     
+// Console.Write("Введите координаты точки x1: ");
+// double x1 = Convert.ToDouble(Console.ReadLine());
+
+// Console.Write("Введите координаты точки y1: ");
+// double y1 = Convert.ToDouble(Console.ReadLine());
+
+// Console.Write("Введите координаты точки z1: ");
+// double z1 = Convert.ToDouble(Console.ReadLine());
+
+// Console.Write("Введите координаты точки x2: ");
+// double x2 = Convert.ToDouble(Console.ReadLine());
+
+// Console.Write("Введите координаты точки y2: ");
+// double y2 = Convert.ToDouble(Console.ReadLine());
+
+// Console.Write("Введите координаты точки z2: ");
+// double z2 = Convert.ToDouble(Console.ReadLine());
+
+// Coor(x1, y1, z1, x2, y2, z2);
+
+
 
 // Задача 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-// 3 -> 1, 8, 27
-// 5 -> 1, 8, 27, 64, 125                    
+  
+
+// void Cube(int a){
+//     int count=1;
+//     while(count <= a){
+//          Console.Write( count * count * count + "  ");
+//          count++;
+//     }  
+// }
+// Console.Write("Введите число: ");
+// int num=Convert.ToInt32(Console.ReadLine());
+// if (num<=0) Console.Write("Ввод не верный.");
+// else {
+//     Cube(num);
+// }
+
+
+
+
+
+//                            ******ДЗ к семинару 4*******
+
+// //  Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
+
+// int Numbers(int a, int b){
+//     int result=0;
+//     for (int curr = 1; curr <= num; curr++){
+//         result += curr;
+//     }
+//     Console.WriteLine($"Сумма чисел от 1 до {a} равна {result}");
+// }
+
+// Console.WriteLine("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// Numbers(number);
+
+
+
+
+
+
+
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+
+
+// Задача 29: Напишите программу, которая задаёт массив из произвольного элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
