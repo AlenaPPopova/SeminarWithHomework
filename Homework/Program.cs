@@ -338,3 +338,130 @@
 // Console.Write("Введите размер массива: ");
 // int size = Convert.ToInt32(Console.ReadLine());
 // ShowArray(Array(size));
+
+
+
+
+//                    ******ДЗ к 5 семинару********
+
+
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+
+// [345, 897, 568, 234] -> 2
+
+// int[] CreateRandomArray(int size, int min, int max){       
+//     int[] array = new int[size];
+//     for(int i=0; i<size; i++){
+//         array[i] = new Random().Next(100, 1000);   //СОМНЕВАЮСЬ В ЭТОЙ СТРОЧКЕ,ХОТЕЛА ОГРАНИЧЕНИЯ ВВЕСТИ Д/3-х ЗНАЧ ЧИСЕЛ
+//     }                                              //НО В ИТОГЕ НЕ РАБОТАЕТ,ВОЗМОЖНО НЕДОРАБОТАЛА ГДЕ-ТО(( 
+//     return array;
+// }
+// void ShowArray(int[] array){   
+//     Console.Write("[ ");                   
+//     for(int i = 0; i<array.Length; i++){
+//     Console.Write($"{array[i]} ");
+//     }
+//     Console.Write("]");
+// }
+// int ChetNum(int[] array){                 
+//     int count = 0;                               
+//     for(int i=0; i<array.Length; i++){
+//         if(array[i]%2 == 0) count++;       //проверяем четный ли эл
+//     }
+//     return count;
+// }
+// Console.WriteLine("Введите размер массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальный элемент массива от 100 до 999: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальный элемент массива от 100 до 999: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int[] array = CreateRandomArray(size,min,max);
+// ShowArray(array);
+// int chet = ChetNum(array);
+// Console.WriteLine();
+// Console.WriteLine($"Количество четных чисел в массиве = {chet}");
+
+
+
+
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
+
+// int[] CreateRandomArray(int size, int min, int max){       
+//     int[] array = new int[size];
+//     for(int i=0; i<size; i++){
+//         array[i] = new Random().Next(min, max+1);  
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array){                              
+//     for(int i = 0; i<array.Length; i++){
+//     Console.Write($"{array[i]} ");
+//     }
+// }
+// int SumNegEl(int[] array){
+//     int sumnegativ = 0;
+//     for(int i = 0; i < array.Length; i++){
+//         if (i % 2 != 0) sumnegativ += array[i];    
+//     }
+//     return sumnegativ;
+// }
+
+// Console.WriteLine("Ведите длину массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальный элемент массива: ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальный элемент массива: ");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int [] array = CreateRandomArray(size,min,max);
+// ShowArray(array);
+// int sumnegativ = SumNegEl(array);
+// Console.WriteLine();
+// Console.WriteLine($"Сумма элементов стоящих на нечетных позициях  массива равна {sumnegativ}.");
+
+
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+
+// int[] CreateRandomArray(int size, int min, int max){
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++){
+//         array[i] = new Random().Next(min, max);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array){
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write($"{array[i]} ");
+//     }
+// }
+
+// int Diff(int []array){
+//     int min = array[0];
+//     int max = array[0];
+//     int result = 0;
+//     for (int i = 0; i < array.Length; i++){
+//         if (array[i] < min){ 
+//             min = array[i];
+//         }
+//         else 
+//             max = array[i];  
+//             result = max - min;     
+//     }
+//     return result;
+// }
+
+// Console.WriteLine("Ведите длину массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное число : ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальное число : ");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int [] array = CreateRandomArray(size,min,max);
+// ShowArray(array);
+// int maxmin = Diff(array);
+// Console.WriteLine();
+// Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
