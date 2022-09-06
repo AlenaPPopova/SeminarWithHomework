@@ -347,13 +347,12 @@
 
 // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-// [345, 897, 568, 234] -> 2
 
 // int[] CreateRandomArray(int size, int min, int max){       
 //     int[] array = new int[size];
 //     for(int i=0; i<size; i++){
-//         array[i] = new Random().Next(100, 1000);   //СОМНЕВАЮСЬ В ЭТОЙ СТРОЧКЕ,ХОТЕЛА ОГРАНИЧЕНИЯ ВВЕСТИ Д/3-х ЗНАЧ ЧИСЕЛ
-//     }                                              //НО В ИТОГЕ НЕ РАБОТАЕТ,ВОЗМОЖНО НЕДОРАБОТАЛА ГДЕ-ТО(( 
+//         array[i] = new Random().Next(100, 1000);   
+//     }                                              
 //     return array;
 // }
 // void ShowArray(int[] array){   
@@ -383,6 +382,7 @@
 // Console.WriteLine($"Количество четных чисел в массиве = {chet}");
 
 
+//P.S.: ввела ограничения на рандом для 3х значных чисел, но указать могу и двузначное, выдает как-то коряво ответ. Не могу разобраться,возможно необходимо что-то дописать на ограничения?! Прошу вашего комментария.
 
 
 
@@ -438,19 +438,18 @@
 //         Console.Write($"{array[i]} ");
 //     }
 // }
-
-// int Diff(int []array){
+// int Differ(int[] array){
 //     int min = array[0];
 //     int max = array[0];
 //     int result = 0;
 //     for (int i = 0; i < array.Length; i++){
-//         if (array[i] < min){ 
-//             min = array[i];
+//         if (array[i] > max){ 
+//             max = array[i];     
 //         }
-//         else 
-//             max = array[i];  
-//             result = max - min;     
+//         else min = array[i];
+           
 //     }
+//     result = max - min;
 //     return result;
 // }
 
@@ -462,6 +461,44 @@
 // int max = Convert.ToInt32(Console.ReadLine());
 // int [] array = CreateRandomArray(size,min,max);
 // ShowArray(array);
-// int maxmin = Diff(array);
+// int maxmin = Differ(array);
 // Console.WriteLine();
 // Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
+
+// P.S.: Константин, прошу дать разьяснения по поводу задачи, пожалуйста. Код считает правльно через раз, где моя 
+// ошибка, подскажите пожалуйста!
+
+
+// Ведите длину массива:
+// 4
+// Введите минимальное число :
+// 4
+// Введите максимальное число :
+// 9
+// 5 8 4 7
+// Разница между максимальным и минимальным элементом массива равна 1.
+
+// Ведите длину массива:
+// 5
+// Введите минимальное число :
+// 65
+// Введите максимальное число :
+// 98
+// 85 77 66 82 86
+// Разница между максимальным и минимальным элементом массива равна 4.
+
+// Писала по-другому и все тоже самое(( int Differ(int[] array){
+//     int min = array[0];
+//     int max = array[0];
+//     int result = 0;
+//     for (int i = 0; i < array.Length; i++){
+//         if (array[i] < min){ 
+//             min = array[i];
+            
+//         } 
+//         else 
+//             max = array[i];           
+//     }
+//     result = max - min;
+//     return result;
+// }
