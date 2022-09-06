@@ -115,6 +115,68 @@
 // NatDeg(A,B);
 
 
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+
+int[] CreateRandomArray(int size, int min, int max){
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++){
+        array[i] = new Random().Next(min, max);
+    }
+    return array;
+}
+void ShowArray(int[] array){
+    for (int i = 0; i < array.Length; i++){
+        Console.Write($"{array[i]} ");
+    }
+}
+
+int Differ(int[] array){
+    int min = array[0];
+    int max = array[0];
+    int result = 0;
+    for (int i = 0; i < array.Length; i++){
+        if (array[i] < min){ 
+            min = array[i];
+            
+        } 
+        else 
+            max = array[i];           
+    }
+    result = max - min;
+    return result;
+}
+
+// int Differ(int[] array){
+//     int min = array[0];
+//     int max = array[0];
+//     int result = 0;
+//     for (int i = 0; i < array.Length; i++){
+//         if (array[i] > max){ 
+//             max = array[i];
+                
+//         } 
+//         else min = array[i];
+           
+//     }
+//     result = max - min;
+//     return result;
+// }
+
+Console.WriteLine("Ведите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное число : ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите максимальное число : ");
+int max = Convert.ToInt32(Console.ReadLine());
+int [] array = CreateRandomArray(size,min,max);
+ShowArray(array);
+int maxmin = Differ(array);
+Console.WriteLine();
+Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
+
+
+
 
 
 
