@@ -426,79 +426,81 @@
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 
-// int[] CreateRandomArray(int size, int min, int max){
-//     int[] array = new int[size];
-//     for (int i = 0; i < size; i++){
-//         array[i] = new Random().Next(min, max);
+int[] CreateRandomArray(int size, int min, int max){
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++){
+        array[i] = new Random().Next(min, max);
+    }
+    return array;
+}
+void ShowArray(int[] array){
+    for (int i = 0; i < array.Length; i++){
+        Console.Write($"{array[i]} ");
+    }
+}
+
+int Differ(int[] array){
+    int min = array[0];
+    int max = array[0];
+    int result = 0;
+    for (int i = 1; i < array.Length; i++){
+        if (array[i] < min){ 
+            min = array[i];
+        } 
+        else if (array[i]>max){
+            max = array[i];           
+            }
+    }
+    result = max - min;
+    return result;
+}
+
+
+Console.WriteLine("Ведите длину массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите минимальное число : ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите максимальное число : ");
+int max = Convert.ToInt32(Console.ReadLine());
+int [] array = CreateRandomArray(size,min,max);
+ShowArray(array);
+int maxmin = Differ(array);
+Console.WriteLine();
+Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
+
+
+//                  ****** ДЗ К 6 СЕМИНАРУ*******
+
+// Задача 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 4
+
+// int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+// int count = 0;
+ 
+// for (int i = 0; i < arr.Length; i++)
+// {
+//     if (arr[i] > 0)
+//     {
+//         count++;
 //     }
-//     return array;
 // }
-// void ShowArray(int[] array){
-//     for (int i = 0; i < array.Length; i++){
-//         Console.Write($"{array[i]} ");
-//     }
-// }
-// int Differ(int[] array){
-//     int min = array[0];
-//     int max = array[0];
-//     int result = 0;
-//     for (int i = 0; i < array.Length; i++){
-//         if (array[i] > max){ 
-//             max = array[i];     
-//         }
-//         else min = array[i];
-           
-//     }
-//     result = max - min;
-//     return result;
-// }
-
-// Console.WriteLine("Ведите длину массива: ");
-// int size = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите минимальное число : ");
-// int min = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите максимальное число : ");
-// int max = Convert.ToInt32(Console.ReadLine());
-// int [] array = CreateRandomArray(size,min,max);
-// ShowArray(array);
-// int maxmin = Differ(array);
-// Console.WriteLine();
-// Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
-
-// P.S.: Константин, прошу дать разьяснения по поводу задачи, пожалуйста. Код считает правльно через раз, где моя 
-// ошибка, подскажите пожалуйста!
+ 
+// Console.Write("Введите элементы(через пробел): ");
+// Console.WriteLine($"Кол-во элементов > 0: {count}");
 
 
-// Ведите длину массива:
-// 4
-// Введите минимальное число :
-// 4
-// Введите максимальное число :
-// 9
-// 5 8 4 7
-// Разница между максимальным и минимальным элементом массива равна 1.
 
-// Ведите длину массива:
-// 5
-// Введите минимальное число :
-// 65
-// Введите максимальное число :
-// 98
-// 85 77 66 82 86
-// Разница между максимальным и минимальным элементом массива равна 4.
 
-// Писала по-другому и все тоже самое(( int Differ(int[] array){
-//     int min = array[0];
-//     int max = array[0];
-//     int result = 0;
-//     for (int i = 0; i < array.Length; i++){
-//         if (array[i] < min){ 
-//             min = array[i];
-            
-//         } 
-//         else 
-//             max = array[i];           
-//     }
-//     result = max - min;
-//     return result;
-// }
+
+
+
+
+
+// Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+
+
+
