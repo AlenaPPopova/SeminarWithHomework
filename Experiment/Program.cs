@@ -118,65 +118,121 @@
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 
-int[] CreateRandomArray(int size, int min, int max){
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++){
-        array[i] = new Random().Next(min, max);
-    }
-    return array;
-}
-void ShowArray(int[] array){
-    for (int i = 0; i < array.Length; i++){
-        Console.Write($"{array[i]} ");
-    }
-}
-
-int Differ(int[] array){
-    int min = array[0];
-    int max = array[0];
-    int result = 0;
-    for (int i = 0; i < array.Length; i++){
-        if (array[i] < min){ 
-            min = array[i];
-            
-        } 
-        else 
-            max = array[i];           
-    }
-    result = max - min;
-    return result;
-}
+// int[] CreateRandomArray(int size, int min, int max){
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++){
+//         array[i] = new Random().Next(min, max);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array){
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write($"{array[i]} ");
+//     }
+// }
 
 // int Differ(int[] array){
 //     int min = array[0];
 //     int max = array[0];
 //     int result = 0;
 //     for (int i = 0; i < array.Length; i++){
-//         if (array[i] > max){ 
-//             max = array[i];
-                
+//         if (array[i] < min){ 
+//             min = array[i];
+            
 //         } 
-//         else min = array[i];
-           
+//         else 
+//             max = array[i];           
 //     }
 //     result = max - min;
 //     return result;
 // }
 
-Console.WriteLine("Ведите длину массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите минимальное число : ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите максимальное число : ");
-int max = Convert.ToInt32(Console.ReadLine());
-int [] array = CreateRandomArray(size,min,max);
-ShowArray(array);
-int maxmin = Differ(array);
-Console.WriteLine();
-Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
+// // int Differ(int[] array){
+// //     int min = array[0];
+// //     int max = array[0];
+// //     int result = 0;
+// //     for (int i = 0; i < array.Length; i++){
+// //         if (array[i] > max){ 
+// //             max = array[i];
+                
+// //         } 
+// //         else min = array[i];
+           
+// //     }
+// //     result = max - min;
+// //     return result;
+// // }
+
+// Console.WriteLine("Ведите длину массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное число : ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальное число : ");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int [] array = CreateRandomArray(size,min,max);
+// ShowArray(array);
+// int maxmin = Differ(array);
+// Console.WriteLine();
+// Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
+
+// Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+//Приравниваем два уравнения k1*x+b1 = k2*x+b2
+//Выводим x в одну сторону k1*x-k2*x = b2-b1
+//Выводим х за равно x = (b2-b1) / (k1-k2)
+
+//// x=(b2-b1)/(k1-k2);
+// y=(k1*(b2-b1))/(k1-k2)+b1;
+
+// double A1 = k1*x+b1;
+// double A2 = k2*x+b2;
+// double B1 = k1*x-k2*x;
+// double B2 = b2-b1;
+// double C = k1-k2;
+
+//  int InterPoint (int k1, int b1, int k2,int b2, int x, int y){
+//     if(k1 == k2 && b1 == b2) Console.WriteLine("Прямые линии совпадают");
+//     else if(k1 == k2) Console.WriteLine("Прямые линии параллельны");
+//     else
+//  }
 
 
+// void InputCoefficients(){
+//     int[] coeff = 0;
+//     for (int i = 0; i < coeff.GetLength(0); i++){
+//         Console.Write($"Введите коэффициенты {i+1}-го уравнения (y = k1 * x + b):\n"){
+//             for (int j = 0; j < coeff.GetLength(1); j++){
+//                 if(j==0) Console.Write($"Введите коэффициент k1: ");
+//                 else Console.Write($"Введите коэффициент b: ");
+//                 int coeff = Convert.ToInt32(Console.ReadLine());
+//                 }
+//              }
+//         }
+//     }
 
+// double[] Decision(double[,] count){
+//     double[,] coeff = new double[2, 2];
+//     double[] crossPoint = new double[2];{
+//         crossPoint[0] = (coeff[1,1] - coeff[0,1]) / (coeff[0,0] - coeff[1,0]);
+//         crossPoint[1] = crossPoint[0] * coeff[0,0] + coeff[0,1];
+//     }
+//     return crossPoint;
+// }
 
-
-
+// void OutputResponse(double[,] coeff){
+//     if (coeff[0,0] == coeff[1,0] && coeff[0,1] == coeff[1,1]){
+//         Console.Write($"\nПрямые совпадают");
+//         }
+//     else if (coeff[0,0] == coeff[1,0] && coeff[0,1] != coeff[1,1]){
+//         Console.Write($"\nПрямые параллельны");
+//         }
+//     else Console.Write($"\nТочка пересечения прямых: ({crossPoint[0]}, {crossPoint[1]})");
+  
+// }
+// double[,] coeff = new double[2, 2];
+// double[] crossPoint = new double[2];
+// Decision(coeff);
+// InputCoefficients();
+// OutputResponse(coeff);
