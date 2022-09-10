@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\Вот\семинар7\bin\MCD\Debug\net6.0\семинар7.exe
+C:\Users\User\Desktop\Вот\семинар7\bin\MCD\Debug\net6.0\семинар7.deps.json
+C:\Users\User\Desktop\Вот\семинар7\bin\MCD\Debug\net6.0\семинар7.runtimeconfig.json
+C:\Users\User\Desktop\Вот\семинар7\bin\MCD\Debug\net6.0\семинар7.dll
+C:\Users\User\Desktop\Вот\семинар7\bin\MCD\Debug\net6.0\семинар7.pdb
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.AssemblyInfo.cs
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.dll
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\refint\семинар7.dll
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.pdb
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\семинар7.genruntimeconfig.cache
+C:\Users\User\Desktop\Вот\семинар7\obj\MCD\Debug\net6.0\ref\семинар7.dll

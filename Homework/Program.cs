@@ -426,81 +426,246 @@
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 
-int[] CreateRandomArray(int size, int min, int max){
-    int[] array = new int[size];
-    for (int i = 0; i < size; i++){
-        array[i] = new Random().Next(min, max);
-    }
-    return array;
-}
-void ShowArray(int[] array){
-    for (int i = 0; i < array.Length; i++){
-        Console.Write($"{array[i]} ");
-    }
-}
+// int[] CreateRandomArray(int size, int min, int max){
+//     int[] array = new int[size];
+//     for (int i = 0; i < size; i++){
+//         array[i] = new Random().Next(min, max);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array){
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write($"{array[i]} ");
+//     }
+// }
 
-int Differ(int[] array){
-    int min = array[0];
-    int max = array[0];
-    int result = 0;
-    for (int i = 1; i < array.Length; i++){
-        if (array[i] < min){ 
-            min = array[i];
-        } 
-        else if (array[i]>max){
-            max = array[i];           
-            }
-    }
-    result = max - min;
-    return result;
-}
+// int Differ(int[] array){
+//     int min = array[0];
+//     int max = array[0];
+//     int result = 0;
+//     for (int i = 1; i < array.Length; i++){
+//         if (array[i] < min){ 
+//             min = array[i];
+//         } 
+//         else if (array[i]>max){
+//             max = array[i];           
+//             }
+//     }
+//     result = max - min;
+//     return result;
+// }
 
 
-Console.WriteLine("Ведите длину массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите минимальное число : ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите максимальное число : ");
-int max = Convert.ToInt32(Console.ReadLine());
-int [] array = CreateRandomArray(size,min,max);
-ShowArray(array);
-int maxmin = Differ(array);
-Console.WriteLine();
-Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
+// Console.WriteLine("Ведите длину массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите минимальное число : ");
+// int min = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите максимальное число : ");
+// int max = Convert.ToInt32(Console.ReadLine());
+// int [] array = CreateRandomArray(size,min,max);
+// ShowArray(array);
+// int maxmin = Differ(array);
+// Console.WriteLine();
+// Console.WriteLine($"Разница между максимальным и минимальным элементом массива равна {maxmin}.");
 
 
 //                  ****** ДЗ К 6 СЕМИНАРУ*******
 
 // Задача 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-// 0, 7, 8, -2, -2 -> 2
-// 1, -7, 567, 89, 223-> 4
 
-// int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-// int count = 0;
- 
-// for (int i = 0; i < arr.Length; i++)
-// {
-//     if (arr[i] > 0)
-//     {
-//         count++;
+// int[] NumberArray(int size){      
+//     int[] array = new int[size];
+//     for(int i=0; i<size; i++){
+//         Console.Write("Input number: ");
+//         array[i] = Convert.ToInt32(Console.ReadLine());
 //     }
+//     return array;
+// }    
+// int PositivElement(int[] array){
+//     int count = 0;
+//     for(int i = 0; i < array.Length; i++){
+//         if(array[i] > 0) count++;
+//     }
+//     return count;
 // }
- 
-// Console.Write("Введите элементы(через пробел): ");
-// Console.WriteLine($"Кол-во элементов > 0: {count}");
+
+// Console.Write("Enter the the size of the array: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] array = NumberArray(size);
+// int count = PositivElement(array);
+// PositivElement(array);
+// Console.WriteLine($"The number of elements is greater than 0: {count}");
 
 
 
-
-
-
-
-
-
+//   НЕ РЕШЕНА.
 // Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
+//Приравниваем два уравнения k1*x+b1 = k2*x+b2
+//Выводим x в одну сторону k1*x-k2*x = b2-b1
+//Выводим х за равно x = (b2-b1) / (k1-k2)
 
+//// x=(b2-b1)/(k1-k2);
+// y=(k1*(b2-b1))/(k1-k2)+b1;
+
+// double A1 = k1*x+b1;
+// double A2 = k2*x+b2;
+// double B1 = k1*x-k2*x;
+// double B2 = b2-b1;
+// double C = k1-k2;
+
+//  int InterPoint (int k1, int b1, int k2,int b2, int x, int y){
+//     if(k1 == k2 && b1 == b2) Console.WriteLine("Прямые линии совпадают");
+//     else if(k1 == k2) Console.WriteLine("Прямые линии параллельны");
+//     else
+//  }
+
+// double[] Dec(double[,] count){
+//     double[,] coeff = new double[2, 2];
+//     double[] crossPoint = new double[2];{
+//         crossPoint[0] = (coeff[1,1] - coeff[0,1]) / (coeff[0,0] - coeff[1,0]);
+//         crossPoint[1] = crossPoint[0] * coeff[0,0] + coeff[0,1];
+//     }
+//     return crossPoint;
+// }
+
+// void OutputResponse(double[,] coeff){
+//     if (coeff[0,0] == coeff[1,0] && coeff[0,1] == coeff[1,1]){
+//         Console.Write($"Прямые совпадают");
+//         }
+//     else if (coeff[0,0] == coeff[1,0] && coeff[0,1] != coeff[1,1]){
+//         Console.Write($"Прямые параллельны");
+//         }
+//     else Console.Write($"Точка пересечения прямых: ({crossPoint[0]}, {crossPoint[1]})");
+  
+// }
+
+
+
+
+
+
+//         *******ДЗ К 7 СЕМИНАРУ*******
+
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+
+
+// double [,] NewArray(double m, double n, double min, double max){
+//     double[,] array = new double[m, n];
+//     for(double i = 0; i<m; i++){                            
+//         for(double j = 0; j<n; j++){
+//             array[i,j] = new Random().NextDouble(min, max+1);
+//             Console.Write("{0,4}", array[i, j]);
+//         }     
+//     }    
+//     return array;
+// }
+
+// double [,] NewArray(double m, double n, double min, double max){
+//     double[,] a = new double[m, n];
+//     Random random = new Random();
+//     for (int i = 0; i < m; i++){
+//         for (int j = 0; j < n; j++){
+//             a[i, j] = random.NextDouble() * 100; // NextDouble() дает случайное вещественное число в диапазоне от 0 до 1
+//             Console.Write("{0,6:F2}", a[i, j]);
+//         }
+//     Console.WriteLine();
+//     }
+// }
+// double
+// NewArray(m,n,min,max);
+
+
+
+
+
+
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 1,7 -> такого числа в массиве нет
+// 1,2 -> 2
+
+
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+// void [,] CreateArrayDouble(int[,] array)
+// {
+//   for (int i = 0; i < m; i++)
+//   {
+//     for (int j = 0; j < n; j++)
+//     {
+//       array[i, j] = new Random().Next() * 20 - 10;
+//     }
+//   }
+// }
+// int[,] arrayWhole = new int[m, n];
+// arrayWhole = TransformationArrayWhole(array);
+
+// WriteArrayInt(arrayWhole);
+
+// Console.Write($"\nCреднее арифметическое:\n");
+// for (int i = 0; i < n; i++)
+// {
+//   double arithmeticMean = 0;
+//   for (int j = 0; j < m; j++)
+//   {
+//     arithmeticMean += arrayWhole[j, i];
+//   }
+//   arithmeticMean = Math.Round(arithmeticMean / m, 1);
+//   Console.WriteLine($"столбца № {i+1} {arithmeticMean}");
+// }
+
+// int[,] TransformationArrayWhole (double[,] array)
+// {
+//   int[,] arrayWhole = new int[array.GetLength(0), array.GetLength(1)];
+//   for (int i = 0; i < array.GetLength(0); i++)
+//   {
+//     for (int j = 0; j < array.GetLength(1); j++)
+//     {
+//       arrayWhole[i, j] = Convert.ToInt32(array[i, j]);
+//     }
+//   }
+//   return arrayWhole;
+// }
+
+// void WriteArrayInt (int[,] arrayWhole){
+// for (int i = 0; i < m; i++)
+//   {
+//       for (int j = 0; j < n; j++)
+//       {
+//         Console.Write(arrayWhole[i, j] + " ");
+//       }
+//       Console.WriteLine();
+//   }
+// }
+
+// Console.Write("Введите m: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите n: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine($"m = {m}, n = {n}.");
+// double[,] array = new double[m, n];
+// CreateArrayDouble(array);
+// Console.WriteLine();
+// int[,] arrayWhole = new int[m, n];
+// arrayWhole = TransformationArrayWhole(array);
+// WriteArrayInt(arrayWhole);
+// Console.Write($"\nCреднее арифметическое:\n");
 
 
