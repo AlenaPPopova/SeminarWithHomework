@@ -3,7 +3,29 @@
 // //result = result * A   или  result += A или *=    /=
 
 
+// Задача 29: Напишите программу, которая задаёт массив из произвольн элементов и выводит их на экран.
 
+
+// int[] Array(int size){
+//     int[] numbers = new int[size];
+//     for (int i = 0; i < numbers.Length; i++){
+//         Console.Write("Введите число массива: ");
+//         numbers[i] = Convert.ToInt32(Console.ReadLine());
+//         }
+//         return numbers;
+// }
+
+// void ShowArray(int[] array){
+//     Console.Write("[ ");
+//     for(int count=0; count<array.Length; count++){
+//         Console.Write(array[count]+ " ");
+//     }
+//     Console.Write("]");
+// }
+
+// Console.Write("Введите размер массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// ShowArray(Array(size));
 
 
 // //Задача на подумать!!! Написать прогу, кот принимает на вход координаты 
