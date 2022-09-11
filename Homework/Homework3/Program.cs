@@ -97,7 +97,22 @@
 //                   +Math.Round(Line3D(x1, y1, z1, x2, y2, z2), 2));  // output rounded number
 
 
+// Задача 23. Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+  
 
+// void Cube(int a){
+//     int count=1;
+//     while(count <= a){
+//          Console.Write( count * count * count + "  ");
+//          count++;
+//     }  
+// }
+// Console.Write("Введите число: ");
+// int num=Convert.ToInt32(Console.ReadLine());
+// if (num<=0) Console.Write("Ввод не верный.");
+// else {
+//     Cube(num);
+// }
 
 
 
