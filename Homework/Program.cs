@@ -101,7 +101,19 @@
 // }
 // //Вычисление и ответ
 
+// или
 
+// Console.WriteLine("Введите число: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// int i = 2;
+// while (i <= a){
+//     Console.Write(i);
+//     if (i+1 < a){
+//         Console.Write(", ");
+//     }
+//     i = i + 2;
+// }
+// Console.WriteLine();
 
 
 
@@ -122,7 +134,23 @@
 // int number = Number();
 // Console.WriteLine("Number is -" + number);
 
+// или
 
+// int secondDigit (int a){
+//     int result = a / 10;                                            // delete right digit
+//     result = result % 10;                                           // delete left digit
+//     return result;
+// }
+// while(true){                                                        // infinite cycle for testing
+//     Console.WriteLine("Введите 3-х значное число: ");
+//     int a = Convert.ToInt32(Console.ReadLine());
+//     if (a > 99 && a < 1000){
+//         Console.WriteLine("Вторая цифра числа: " + secondDigit(a)); // call function
+//     }
+//     else{
+//         Console.WriteLine("Число не соответствует условию!");       // call function
+//     }
+// }
 
 // // // //Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, 
 // // что третьей цифры нет.
@@ -498,7 +526,7 @@
 
 
 
-//   НЕ РЕШЕНА.
+
 // Задача 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
@@ -510,37 +538,25 @@
 //// x=(b2-b1)/(k1-k2);
 // y=(k1*(b2-b1))/(k1-k2)+b1;
 
-// double A1 = k1*x+b1;
-// double A2 = k2*x+b2;
-// double B1 = k1*x-k2*x;
-// double B2 = b2-b1;
-// double C = k1-k2;
-
-//  int InterPoint (int k1, int b1, int k2,int b2, int x, int y){
-//     if(k1 == k2 && b1 == b2) Console.WriteLine("Прямые линии совпадают");
-//     else if(k1 == k2) Console.WriteLine("Прямые линии параллельны");
-//     else
-//  }
-
-// double[] Dec(double[,] count){
-//     double[,] coeff = new double[2, 2];
-//     double[] crossPoint = new double[2];{
-//         crossPoint[0] = (coeff[1,1] - coeff[0,1]) / (coeff[0,0] - coeff[1,0]);
-//         crossPoint[1] = crossPoint[0] * coeff[0,0] + coeff[0,1];
-//     }
-//     return crossPoint;
+// double[] CrossPoint(double b1, double k1, double b2, double k2){     // ищет точку пересечения
+//     double[] array = new double[2];
+//     array[0] = (b2 + b1 * (-1)) / (k1 + k2 * (-1));                         //  массив [0] ищет X
+//     array[1] = k1 * array[0] + b1;                                          // массив [1] ищет Y
+//     return array;                                                           // возвращает оба массива [0]и[1]
 // }
+// Console.WriteLine("Введите точку b1: ");
+// double b1 = Convert.ToDouble(Console.ReadLine());
+// Console.WriteLine("Введите точку k1: ");
+// double k1 = Convert.ToDouble(Console.ReadLine());
+// Console.WriteLine("Введите точку b2: ");
+// double b2 = Convert.ToDouble(Console.ReadLine());
+// Console.WriteLine("Введите точку k2: ");
+// double k2 = Convert.ToDouble(Console.ReadLine());
 
-// void OutputResponse(double[,] coeff){
-//     if (coeff[0,0] == coeff[1,0] && coeff[0,1] == coeff[1,1]){
-//         Console.Write($"Прямые совпадают");
-//         }
-//     else if (coeff[0,0] == coeff[1,0] && coeff[0,1] != coeff[1,1]){
-//         Console.Write($"Прямые параллельны");
-//         }
-//     else Console.Write($"Точка пересечения прямых: ({crossPoint[0]}, {crossPoint[1]})");
-  
-// }
+// double[] array = CrossPoint(b1, k1, b2, k2);
+// Console.WriteLine($"Точка пересечения двух прямых ({array[0]}, {array[1]})");        
+
+
 
 
 
@@ -555,45 +571,51 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-
-// double [,] NewArray(double m, double n, double min, double max){
+// double[,] CreateRandom2dArray(int m, int n){
 //     double[,] array = new double[m, n];
-//     for(double i = 0; i<m; i++){                            
-//         for(double j = 0; j<n; j++){
-//             array[i,j] = new Random().NextDouble(min, max+1);
-//             Console.Write("{0,4}", array[i, j]);
-//         }     
-//     }    
+//     for(int i = 0; i<m; i++){                              //Создание массива
+//         for(int j = 0; j<n; j++){
+//             array[i,j] = new Random().NextDouble()* 10;      
+//         }
+//     }     
 //     return array;
 // }
 
-// double [,] NewArray(double m, double n, double min, double max){
-//     double[,] a = new double[m, n];
-//     Random random = new Random();
-//     for (int i = 0; i < m; i++){
-//         for (int j = 0; j < n; j++){
-//             a[i, j] = random.NextDouble() * 100; // NextDouble() дает случайное вещественное число в диапазоне от 0 до 1
-//             Console.Write("{0,6:F2}", a[i, j]);
+// void ShowMe2dArray(double[,] array){                      
+//     for(int i = 0; i<array.GetLength(0); i++){        
+//         for(int j = 0; j<array.GetLength(1); j++){    
+//             Console.Write(Math.Round(array[i,j], 1) + " ");     //округляет до 1 цифры после запятой
 //         }
-//     Console.WriteLine();
+//         Console.WriteLine();
 //     }
 // }
-// double
-// NewArray(m,n,min,max);
+
+// double[,] array = CreateRandom2dArray(5,5);
+// ShowMe2dArray(array);
 
 
 
 
-
-
-
-// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+//и возвращает значение этого элемента или же указание, что такого элемента нет.
 // Например, задан массив:
 // 1 4 7 2
 // 5 9 2 3
 // 8 4 2 4
 // 1,7 -> такого числа в массиве нет
 // 1,2 -> 2
+
+// int[,] CreateRandom2dArray(int rows, int cols, int min, int max){
+//     int[,] array = new int[rows,cols];
+//     for(int i = 0; i<rows; i++)                               //Создание массива
+//         for(int j = 0; j<cols; j++)
+//             array[i,j] = new Random().Next(min,max+1);          
+//     return array;
+// }
+
+
+
+
 
 
 
