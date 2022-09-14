@@ -73,52 +73,46 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-double[,] CreateRandom2dArray(int m, int n, int min, int max)
-{
-    double[,] array = new double[m, n];
 
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            array[i, j] = new Random().Next(min, max + 1);
-        }
-    }
-    return array;
-}
 
-void  Create2dArray(double[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write($"{array[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
 
-void Show2dArray(double[,] array)
-{
-    double s;
+// double[,] CreateRandom2dArray(int a, int b){
+//     double[,] array = new double[a,b];
+//     for (int i = 0; i < a; i++){
+//         for (int j = 0; j < b; j++){
+//             array[i, j] = new Random().Next(0, 10);
+//         }
+//     }
+//     return array;
+// }
 
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-        s = 0;
-        for (int i = 0; i < array.GetLength(0); i++)
-        {
-            s = s + array[i, j];
-        }
-        s = s / array.GetLength(0);
-        Console.Write($" {s} ");
-    }
-}
-Console.WriteLine("Введите количество строк массива: ");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите количество столбцов массива: ");
-int cols = Convert.ToInt32(Console.ReadLine());
-double[,] array = CreateRandom2dArray(rows, cols, 0, 9);
-Create2dArray(array);
-Console.WriteLine();
-Show2dArray(array);
+// void Create2dArray(double[,] array){
+//     for (int i = 0; i < array.GetLength(0); i++){
+//         for (int j = 0; j < array.GetLength(1); j++){
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void Show2dArray(double[,] array){
+//     double sum;
+//     for (int j = 0; j < array.GetLength(1); j++){
+//         sum = 0;
+//         for (int i = 0; i < array.GetLength(0); i++){
+//             sum = sum + array[i, j];
+//         }
+//         sum = sum / array.GetLength(0);
+//         Console.Write($"{sum} ");
+//     }
+// }
+// Console.WriteLine("Введите количество строк массива: ");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов массива: ");
+// int b = Convert.ToInt32(Console.ReadLine());
+// double[,] array = CreateRandom2dArray(a, b);
+// Create2dArray(array);
+// Console.WriteLine();
+// Console.Write($"Среднее арифметическое по каждому столбцу в массиве: ");
+// Console.WriteLine();
+// Show2dArray(array);
