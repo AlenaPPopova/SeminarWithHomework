@@ -1,6 +1,4 @@
-﻿
-
-//         *******ДЗ К 7 СЕМИНАРУ*******
+﻿//         *******ДЗ К 7 СЕМИНАРУ*******
 
 // Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 // m = 3, n = 4.
@@ -8,26 +6,31 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-// double[,] CreateRandom2dArray(int m, int n){
+// double[,] RandomArray2d(int m, int n){
 //     double[,] array = new double[m, n];
-//     for(int i = 0; i<m; i++){                              //Создание массива
+//     for(int i = 0; i<m; i++){                              
 //         for(int j = 0; j<n; j++){
-//             array[i,j] = new Random().NextDouble()* 10;      
-//         }
-//     }     
+//             array[i,j] = new Random().NextDouble() * 10;      //чтобы получить цифру до 10,0(с запятой)
+//         }                                                      //если *100 то до 100,0
+//     }      
 //     return array;
 // }
 
 // void ShowMe2dArray(double[,] array){                      
 //     for(int i = 0; i<array.GetLength(0); i++){        
 //         for(int j = 0; j<array.GetLength(1); j++){    
-//             Console.Write(Math.Round(array[i,j], 1) + " ");     //округляет до 1 цифры после запятой
-//         }
-//         Console.WriteLine();
+//             Console.Write(Math.Round(array[i,j], 1) + " ");     //округляет до 1 цифры после запятой.
+//         }                                                       //Math.Round Округляет значение до ближайшего целого
+//         Console.WriteLine();                                    //или указанного количества десятичных знаков.
 //     }
 // }
 
-// double[,] array = CreateRandom2dArray(5,5);
+// Console.Write("Введите размер m: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите размер n: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// double[,] array = RandomArray2d(m, n);
+// Console.WriteLine();
 // ShowMe2dArray(array);
 
 
@@ -42,16 +45,23 @@
 // 1,7 -> такого числа в массиве нет
 // 1,2 -> 2
 
-// int[,] CreateRandom2dArray(int rows, int cols, int min, int max){
-//     int[,] array = new int[rows,cols];
-//     for(int i = 0; i<rows; i++)                               //Создание массива
-//         for(int j = 0; j<cols; j++)
-//             array[i,j] = new Random().Next(min,max+1);          
-//     return array;
+// int[,] array = {{1, 4, 7, 2},                                  
+//                 {5, 9, 2, 3},
+//                 {8, 4, 2, 4}};
+                
+                
+// void SearchElementArray(int i, int j, int[,] array){
+//     if(i < array.GetLength(0) && j < array.GetLength(1))          // ищет существует такая позиция
+//         Console.WriteLine($"Array[{i},{j}] = {array[i,j]}");      
+//     else Console.WriteLine($"Array[{i},{j}] doesn't exist!");     
 // }
 
+// Console.Write("Введите позицию m: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите позицию n: ");
+// int n = Convert.ToInt32(Console.ReadLine());
 
-
+// SearchElementArray(m,n, array);
 
 
 
@@ -63,70 +73,52 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-// void [,] CreateArrayDouble(int[,] array)
-// {
-//   for (int i = 0; i < m; i++)
-//   {
-//     for (int j = 0; j < n; j++)
-//     {
-//       array[i, j] = new Random().Next() * 20 - 10;
-//     }
-//   }
-// }
-// int[,] arrayWhole = new int[m, n];
-// arrayWhole = TransformationArrayWhole(array);
+double[,] CreateRandom2dArray(int m, int n, int min, int max)
+{
+    double[,] array = new double[m, n];
 
-// WriteArrayInt(arrayWhole);
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            array[i, j] = new Random().Next(min, max + 1);
+        }
+    }
+    return array;
+}
 
-// Console.Write($"\nCреднее арифметическое:\n");
-// for (int i = 0; i < n; i++)
-// {
-//   double arithmeticMean = 0;
-//   for (int j = 0; j < m; j++)
-//   {
-//     arithmeticMean += arrayWhole[j, i];
-//   }
-//   arithmeticMean = Math.Round(arithmeticMean / m, 1);
-//   Console.WriteLine($"столбца № {i+1} {arithmeticMean}");
-// }
+void  Create2dArray(double[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
 
-// int[,] TransformationArrayWhole (double[,] array)
-// {
-//   int[,] arrayWhole = new int[array.GetLength(0), array.GetLength(1)];
-//   for (int i = 0; i < array.GetLength(0); i++)
-//   {
-//     for (int j = 0; j < array.GetLength(1); j++)
-//     {
-//       arrayWhole[i, j] = Convert.ToInt32(array[i, j]);
-//     }
-//   }
-//   return arrayWhole;
-// }
+void Show2dArray(double[,] array)
+{
+    double s;
 
-// void WriteArrayInt (int[,] arrayWhole){
-// for (int i = 0; i < m; i++)
-//   {
-//       for (int j = 0; j < n; j++)
-//       {
-//         Console.Write(arrayWhole[i, j] + " ");
-//       }
-//       Console.WriteLine();
-//   }
-// }
-
-
-// Console.Write("Введите m: ");
-// int m = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите n: ");
-// int n = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine($"m = {m}, n = {n}.");
-// double[,] array = new double[m, n];
-// CreateArrayDouble(array);
-// Console.WriteLine();
-// int[,] arrayWhole = new int[m, n];
-// arrayWhole = TransformationArrayWhole(array);
-// WriteArrayInt(arrayWhole);
-// Console.Write($"\nCреднее арифметическое:\n");
-
-
-
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+        s = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            s = s + array[i, j];
+        }
+        s = s / array.GetLength(0);
+        Console.Write($" {s} ");
+    }
+}
+Console.WriteLine("Введите количество строк массива: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов массива: ");
+int cols = Convert.ToInt32(Console.ReadLine());
+double[,] array = CreateRandom2dArray(rows, cols, 0, 9);
+Create2dArray(array);
+Console.WriteLine();
+Show2dArray(array);
