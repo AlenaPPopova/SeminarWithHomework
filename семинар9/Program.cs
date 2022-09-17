@@ -96,76 +96,76 @@
 
 //Задача 69. Напишите программу , которая на вход принимает 2 числа A и B и возводит число A в целую степень В.
 
-//Запрос данных от пользователя
-int ReadData(string line)
-{
-    Console.Write(line);
-    int num = int.Parse(Console.ReadLine() ?? "1");   //??"" привводе пробела пользователем вернется то что написано
-    return num;                                       // в кавычках
-}
+// //Запрос данных от пользователя
+// int ReadData(string line)
+// {
+//     Console.Write(line);
+//     int num = int.Parse(Console.ReadLine() ?? "1");   //??"" привводе пробела пользователем вернется то что написано
+//     return num;                                       // в кавычках
+// }
 
-//Рекурентное возведение в степень
-long PowRec(int numA, int numB)
-{
-    //Точка остановки
-    if (numB <= 0)
-    {
-        return 1;
-    }
-    else
-    {
-        //Рекурентный вызов
-        return numA * PowRec(numA, numB - 1);
-    }
+// //Рекурентное возведение в степень
+// long PowRec(int numA, int numB)
+// {
+//     //Точка остановки
+//     if (numB <= 0)
+//     {
+//         return 1;
+//     }
+//     else
+//     {
+//         //Рекурентный вызов
+//         return numA * PowRec(numA, numB - 1);
+//     }
 
-}
+// }
 
-//Рекурентное возведение в степень с разбиением на части
-long MyPowRec(int numA, int numB)
-{
-    //Точка остановки
-    if (numB == 2)
-    {
-        return numA * numA;
-    }
-    //Точка остановки
-    if (numB == 1)
-    {
-        return numA;
-    }
-    if (numB % 2 == 0)
-    {
-        return PowRec(numA, numB / 2) * PowRec(numA, numB / 2);
-    }
-    else
-    {
-        return PowRec(numA, numB / 2) * PowRec(numA, numB / 2 + 1);
-    }
-}
+// //Рекурентное возведение в степень с разбиением на части
+// long MyPowRec(int numA, int numB)
+// {
+//     //Точка остановки
+//     if (numB == 2)
+//     {
+//         return numA * numA;
+//     }
+//     //Точка остановки
+//     if (numB == 1)
+//     {
+//         return numA;
+//     }
+//     if (numB % 2 == 0)
+//     {
+//         return PowRec(numA, numB / 2) * PowRec(numA, numB / 2);
+//     }
+//     else
+//     {
+//         return PowRec(numA, numB / 2) * PowRec(numA, numB / 2 + 1);
+//     }
+// }
 
-//Вывод результата
-void PrintData(string prefix, string num)
-{
-    Console.WriteLine(prefix + num);
+// //Вывод результата
+// void PrintData(string prefix, string num)
+// {
+//     Console.WriteLine(prefix + num);
 
-}
+// }
 
 
-int numA = ReadData("Введите число А: ");
-int numB = ReadData("Введите число B: ");
+// int numA = ReadData("Введите число А: ");
+// int numB = ReadData("Введите число B: ");
 
-DateTime d1 = DateTime.Now;
-long resPow1 = PowRec(numA, numB);
-PrintData("Время работы PowRec: ", (DateTime.Now - d1).ToString());
+// DateTime d1 = DateTime.Now;
+// long resPow1 = PowRec(numA, numB);
+// PrintData("Время работы PowRec: ", (DateTime.Now - d1).ToString());
 
-DateTime d2 = DateTime.Now;
-long resPow2 = MyPowRec(numA, numB);
-PrintData("Время работы MyPowRec: ", (DateTime.Now - d2).ToString());
+// DateTime d2 = DateTime.Now;
+// long resPow2 = MyPowRec(numA, numB);
+// PrintData("Время работы MyPowRec: ", (DateTime.Now - d2).ToString());
 
-DateTime d3 = DateTime.Now;
-long resPow3 = (long)Math.Pow(numA, numB);
-PrintData("Время работы Math.Pow: ", (DateTime.Now - d3).ToString());
+// DateTime d3 = DateTime.Now;
+// long resPow3 = (long)Math.Pow(numA, numB);
+// PrintData("Время работы Math.Pow: ", (DateTime.Now - d3).ToString());
 
-PrintData("Число " + numA + " в степени " + numB + ":", resPow1.ToString());
-PrintData("Число " + numA + " в степени " + numB + ":", resPow2.ToString());
-PrintData("Число " + numA + " в степени " + numB + ":", resPow3.ToString());
+// PrintData("Число " + numA + " в степени " + numB + ":", resPow1.ToString());
+// PrintData("Число " + numA + " в степени " + numB + ":", resPow2.ToString());
+// PrintData("Число " + numA + " в степени " + numB + ":", resPow3.ToString());
